@@ -46,12 +46,7 @@ export default function App() {
   };
 
   if (isLoading || !portfolioData) {
-    return (
-      <div className="loading-screen">
-        <div className="loader"></div>
-        <p>Loading Portfolio...</p>
-      </div>
-    );
+    return null;
   }
 
   if (isEditing && isAdmin) {
