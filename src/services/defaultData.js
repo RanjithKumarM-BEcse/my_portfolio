@@ -48,31 +48,41 @@ export const defaultPortfolioData = {
     {
       id: "cert-1",
       title: "Data Structures and Algorithms",
-      issuer: "Infosys Springboard – Nov 2025",
+      issuer: "Infosys Springboard",
+      date: "Nov 2025",
+      description: "Comprehensive study of essential data structures including lists, trees, graphs, and algorithm analysis.",
       url: "https://drive.google.com/file/d/1pHKbNSQLEALVgP2qQbvgBQSQ3Kkwcqah/view?usp=sharing"
     },
     {
       id: "cert-2",
       title: "Data Structure and Algorithm Designs",
-      issuer: "National Programme on Technology Enhanced Learning – Oct 2025",
+      issuer: "National Programme on Technology Enhanced Learning",
+      date: "Oct 2025",
+      description: "Advanced course on designing and analysis of efficient algorithms and structural paradigms.",
       url: "https://drive.google.com/file/d/1AWCW3Ji-B66yUDfHOusStiS9p2n3BSrl/view?usp=sharing"
     },
     {
       id: "cert-3",
       title: "MATLAB Courses",
-      issuer: "MathWorks Training Services – Oct 2025",
+      issuer: "MathWorks Training Services",
+      date: "Oct 2025",
+      description: "Hands-on training in MATLAB computing environment, data visualization, and numerical calculations.",
       url: "https://drive.google.com/file/d/1i0ggDce8QhB4KRc2kuQuJiUu2gDuzJU7/view?usp=sharing"
     },
     {
       id: "cert-4",
       title: "Python Essentials",
-      issuer: "Cisco Networking Academy – Jun 2025",
+      issuer: "Cisco Networking Academy",
+      date: "Jun 2025",
+      description: "Fundamental course on Python syntax, object-oriented concepts, and basic scripting libraries.",
       url: "https://drive.google.com/file/d/1IRYPNkxbq80xb99CpP1isHKLegsG0xil/view?usp=sharing"
     },
     {
       id: "cert-5",
       title: "Programming Fundamentals using Python",
-      issuer: "Infosys Springboard – Apr 2025",
+      issuer: "Infosys Springboard",
+      date: "Apr 2025",
+      description: "Introduction to algorithmic thinking and core programming structures utilizing the Python language.",
       url: "https://drive.google.com/file/d/19Efog0a7cnOpb33tIWDs36WmnfoQ6-li/view?usp=sharing"
     }
   ],

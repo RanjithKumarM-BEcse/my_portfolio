@@ -213,13 +213,17 @@ export default function PortfolioView({ data, isAdmin, onEditClick, onLoginClick
       {certificates.length > 0 && (
         <section id="certificates">
           <h3 className="section-title"><i className="fa-regular fa-newspaper"></i> Courses & Certifications</h3>
-          <div className="grid certificates-grid">
+          <div className="certificates-list">
             {certificates.map((cert) => (
-              <div className="card certificate-card" key={cert.id}>
-                <div className="cert-info">
-                  <strong>{cert.title}</strong>
-                  <span className="issuer">{cert.issuer}</span>
+              <div className="card certificate-card-row" key={cert.id}>
+                <div className="certificate-header">
+                  <div className="cert-title-issuer">
+                    <strong>{cert.title}</strong>
+                    <span className="issuer">{cert.issuer}</span>
+                  </div>
+                  {cert.date && <span className="certificate-date-badge">{cert.date}</span>}
                 </div>
+                {cert.description && <p className="certificate-description">{cert.description}</p>}
                 {cert.url && (
                   <a href={cert.url} target="_blank" rel="noreferrer" className="btn-cert">
                     View Certificate <i className="fa-solid fa-arrow-up-right-from-square"></i>
@@ -276,8 +280,10 @@ export default function PortfolioView({ data, isAdmin, onEditClick, onLoginClick
             {experience.map((item) => (
               <div className="card timeline-card" key={item.id}>
                 <div className="card-details">
-                  <strong>{item.role}</strong>
-                  <span className="experience-date">{item.date}</span>
+                  <div className="experience-header">
+                    <strong>{item.role}</strong>
+                    {item.date && <span className="experience-date-badge">{item.date}</span>}
+                  </div>
                   <p>{item.description}</p>
                   {item.certificateUrl && (
                     <a href={item.certificateUrl} target="_blank" rel="noreferrer" className="btn-cert">

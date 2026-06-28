@@ -308,14 +308,23 @@ export default function EditorDashboard({ data, onSave, onClose }) {
                       />
                     </div>
                     <div>
-                      <label>Issuer & Date Details</label>
+                      <label>Issuer / Body</label>
                       <input 
                         type="text" 
                         value={item.issuer || ''} 
                         onChange={e => handleListItemChange('certificates', idx, 'issuer', e.target.value)}
                       />
                     </div>
-                    <div className="full-width-field">
+                    <div>
+                      <label>Date Earned</label>
+                      <input 
+                        type="text" 
+                        value={item.date || ''} 
+                        onChange={e => handleListItemChange('certificates', idx, 'date', e.target.value)}
+                        placeholder="Nov 2025"
+                      />
+                    </div>
+                    <div>
                       <label>Verification Link URL</label>
                       <input 
                         type="text" 
@@ -323,12 +332,20 @@ export default function EditorDashboard({ data, onSave, onClose }) {
                         onChange={e => handleListItemChange('certificates', idx, 'url', e.target.value)}
                       />
                     </div>
+                    <div className="full-width-field">
+                      <label>Description / Details</label>
+                      <textarea 
+                        rows="3"
+                        value={item.description || ''} 
+                        onChange={e => handleListItemChange('certificates', idx, 'description', e.target.value)}
+                      />
+                    </div>
                   </div>
                 </div>
               ))}
               <button 
                 className="btn btn-outline btn-add-item" 
-                onClick={() => handleAddItem('certificates', { title: '', issuer: '', url: '' })}
+                onClick={() => handleAddItem('certificates', { title: '', issuer: '', date: '', description: '', url: '' })}
               >
                 + Add Certificate
               </button>
