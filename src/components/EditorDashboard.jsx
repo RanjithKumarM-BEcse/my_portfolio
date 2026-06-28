@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { portfolioService } from '../services/supabase';
+import PortfolioView from './PortfolioView';
 
 export default function EditorDashboard({ data, onSave, onClose }) {
   const [editedData, setEditedData] = useState(JSON.parse(JSON.stringify(data)));
   const [activeTab, setActiveTab] = useState('about');
   const [isPublishing, setIsPublishing] = useState(false);
   const [uploadingField, setUploadingField] = useState(null);
+  const [showPreview, setShowPreview] = useState(false);
 
   const tabs = [
     { id: 'about', label: 'About', icon: 'fa-regular fa-user' },
@@ -114,6 +116,13 @@ export default function EditorDashboard({ data, onSave, onClose }) {
           ))}
         </ul>
         <div className="editor-footer-actions">
+          <button 
+            className="btn btn-outline btn-preview-toggle"
+            onClick={() => setShowPreview(true)}
+            style={{ marginBottom: '0.4rem', borderColor: 'var(--accent)', color: 'var(--accent)' }}
+          >
+            <i className="fa-regular fa-eye"></i> Preview Portfolio
+          </button>
           <button 
             className="btn btn-primary btn-publish"
             onClick={handlePublish}
@@ -494,41 +503,14 @@ export default function EditorDashboard({ data, onSave, onClose }) {
         </div>
       </main>
 
-      {/* Editor Right Panel Live Preview */}
-      <section className="editor-preview-panel">
-        <div className="preview-label">Live Preview</div>
-        <div className="preview-content-box">
-          {/* Static component render of Preview without nav-bar scroll controls */}
-          <div className="preview-scaled">
-            {/* Simple mock render of hero, skills, projects to preview dynamically */}
-            <div className="preview-section">
-              <h2>{editedData.about.name}</h2>
-              <p className="preview-bio">{editedData.about.bio}</p>
-            </div>
-            
-            <div className="preview-section">
-              <h4>Skills</h4>
-              <div className="preview-grid">
-                {editedData.skills.map(s => (
-                  <div key={s.id} className="preview-tag-box">
-                    <strong>{s.category}</strong>: {s.items.join(', ')}
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="preview-section">
-              <h4>Projects</h4>
-              {editedData.projects.map(p => (
-                <div key={p.id} className="preview-item">
-                  <strong>{p.title}</strong> ({p.date})
-                  <p>{p.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
+      {showPreview && (
+        <div className="preview-modal-overlay">
+          <button className="btn-close-preview-floating" onClick={() => setShowPreview(false)}>
+            <i className="fa-solid fa-xmark"></i> Close Preview
+          </button>
+          <PortfolioView data={editedData} isAdmin={false} />
         </div>
-      </section>
+      )}
     </div>
   );
 }
