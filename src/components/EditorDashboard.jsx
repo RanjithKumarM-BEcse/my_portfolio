@@ -6,7 +6,6 @@ export default function EditorDashboard({ data, onSave, onClose }) {
   const [editedData, setEditedData] = useState(JSON.parse(JSON.stringify(data)));
   const [activeTab, setActiveTab] = useState('about');
   const [isPublishing, setIsPublishing] = useState(false);
-  const [uploadingField, setUploadingField] = useState(null);
   const [showPreview, setShowPreview] = useState(false);
 
   const tabs = [
@@ -29,21 +28,6 @@ export default function EditorDashboard({ data, onSave, onClose }) {
     }));
   };
 
-  const handleFileUpload = async (e, section, field) => {
-    const file = e.target.files[0];
-    if (!file) return;
-
-    setUploadingField(field);
-    try {
-      const publicUrl = await portfolioService.uploadAsset(file);
-      handleInputChange(section, field, publicUrl);
-    } catch (err) {
-      console.error("Upload failed:", err);
-      alert("Upload failed. Fallback to default/local URL.");
-    } finally {
-      setUploadingField(null);
-    }
-  };
 
   // List manipulation helpers
   const handleAddItem = (section, template) => {
