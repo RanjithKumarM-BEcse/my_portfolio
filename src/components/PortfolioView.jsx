@@ -165,7 +165,7 @@ export default function PortfolioView({ data, isAdmin, onEditClick, onLoginClick
       {/* Education Section */}
       {education.length > 0 && (
         <section id="education">
-          <h3 className="section-title"><i className="fa-solid fa-graduation-cap"></i> Education</h3>
+          <h3 className="section-title">Education</h3>
           <div className="education-timeline">
             {education.map((item) => (
               <div className="card timeline-card" key={item.id}>
@@ -183,7 +183,7 @@ export default function PortfolioView({ data, isAdmin, onEditClick, onLoginClick
       {/* Skills Section */}
       {skills.length > 0 && (
         <section id="skills">
-          <h3 class="section-title"><i class="fa-solid fa-code"></i> Skills</h3>
+          <h3 className="section-title">Skills</h3>
           <div className="grid skills-grid">
             {skills.map((skillGroup) => (
               <div className="card skill-card" key={skillGroup.id}>
@@ -204,7 +204,7 @@ export default function PortfolioView({ data, isAdmin, onEditClick, onLoginClick
       {/* Certificates Section */}
       {certificates.length > 0 && (
         <section id="certificates">
-          <h3 className="section-title"><i className="fa-regular fa-newspaper"></i> Courses & Certifications</h3>
+          <h3 className="section-title">Courses & Certifications</h3>
           <div className="certificates-list">
             {certificates.map((cert) => (
               <div className="card certificate-card-row" key={cert.id}>
@@ -230,7 +230,7 @@ export default function PortfolioView({ data, isAdmin, onEditClick, onLoginClick
       {/* Projects Section */}
       {projects.length > 0 && (
         <section id="projects">
-          <h3 className="section-title"><i className="fa-solid fa-laptop-code"></i> Projects</h3>
+          <h3 className="section-title">Projects</h3>
           <div className="grid projects-grid">
             {projects.map((proj) => (
               <div className="card project-card" key={proj.id}>
@@ -267,7 +267,7 @@ export default function PortfolioView({ data, isAdmin, onEditClick, onLoginClick
       {/* Experience Section */}
       {experience.length > 0 && (
         <section id="experience">
-          <h3 className="section-title"><i className="fa-solid fa-briefcase"></i> Experience</h3>
+          <h3 className="section-title">Experience</h3>
           <div className="experience-timeline">
             {experience.map((item) => (
               <div className="card timeline-card" key={item.id}>
@@ -291,7 +291,7 @@ export default function PortfolioView({ data, isAdmin, onEditClick, onLoginClick
 
       {/* Contact Section */}
       <section id="contact">
-        <h3 className="section-title"><i className="fa-solid fa-envelope"></i> Contact</h3>
+        <h3 className="section-title">Contact</h3>
         <div className="grid contact-grid">
           {contact.email && (
             <a href={`mailto:${contact.email}`} className="card contact-card">
