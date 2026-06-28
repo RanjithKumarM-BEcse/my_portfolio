@@ -333,8 +333,8 @@ export default function PortfolioView({ data, isAdmin, onEditClick, onLoginClick
               <i className="fa-solid fa-right-from-bracket"></i> Sign Out
             </button>
           ) : (
-            <button onClick={onLoginClick} className="btn-login-footer" style={{ marginTop: '1rem' }}>
-              <i className="fa-solid fa-lock"></i> Admin
+            <button onClick={onLoginClick} className="admin-link-btn">
+              Admin
             </button>
           )}
         </div>
