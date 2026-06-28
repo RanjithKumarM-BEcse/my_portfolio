@@ -159,13 +159,13 @@ export default function EditorDashboard({ data, onSave, onClose }) {
 
               <div className="file-upload-row">
                 <div className="file-upload-col">
-                  <label>Profile Picture</label>
+                  <label>Profile Picture Path or URL</label>
                   <input 
-                    type="file" 
-                    accept="image/*"
-                    onChange={e => handleFileUpload(e, 'about', 'photoUrl')} 
+                    type="text" 
+                    value={editedData.about.photoUrl || ''} 
+                    onChange={e => handleInputChange('about', 'photoUrl', e.target.value)} 
+                    placeholder="photo.jpg"
                   />
-                  {uploadingField === 'photoUrl' && <span className="upload-loader">Uploading...</span>}
                 </div>
                 <div className="file-upload-col">
                   <label>Resume Link (Google Drive, etc.)</label>
