@@ -124,16 +124,10 @@ export default function PortfolioView({ data, isAdmin, onEditClick, onLoginClick
             </li>
             
             {/* Admin control buttons in header */}
-            {isAdmin ? (
+            {isAdmin && (
               <li>
                 <button onClick={onEditClick} className="btn-admin-header">
                   <i className="fa-solid fa-pen-to-square"></i> Edit
-                </button>
-              </li>
-            ) : (
-              <li>
-                <button onClick={onLoginClick} className="btn-login-header">
-                  <i className="fa-solid fa-lock"></i> Admin
                 </button>
               </li>
             )}
@@ -175,7 +169,6 @@ export default function PortfolioView({ data, isAdmin, onEditClick, onLoginClick
           <div className="education-timeline">
             {education.map((item) => (
               <div className="card timeline-card" key={item.id}>
-                <div className="card-icon"><i className="fa-solid fa-university"></i></div>
                 <div className="card-details">
                   <strong>{item.degree}</strong>
                   <span className="institution-name">{item.institution}</span>
@@ -195,7 +188,6 @@ export default function PortfolioView({ data, isAdmin, onEditClick, onLoginClick
             {skills.map((skillGroup) => (
               <div className="card skill-card" key={skillGroup.id}>
                 <div className="skill-header">
-                  <i className={`fa-solid ${skillGroup.category.toLowerCase().includes('tool') ? 'fa-wrench' : skillGroup.category.toLowerCase().includes('web') ? 'fa-globe' : 'fa-terminal'} skill-icon`}></i>
                   <strong>{skillGroup.category}</strong>
                 </div>
                 <div className="skill-tags">
@@ -336,9 +328,13 @@ export default function PortfolioView({ data, isAdmin, onEditClick, onLoginClick
       <footer>
         <div className="footer-content">
           <p>&copy; {new Date().getFullYear()} {about.name}</p>
-          {isAdmin && (
+          {isAdmin ? (
             <button onClick={onLogoutClick} className="btn-logout-footer">
               <i className="fa-solid fa-right-from-bracket"></i> Sign Out
+            </button>
+          ) : (
+            <button onClick={onLoginClick} className="btn-login-footer" style={{ marginTop: '1rem' }}>
+              <i className="fa-solid fa-lock"></i> Admin
             </button>
           )}
         </div>

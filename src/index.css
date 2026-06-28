@@ -741,7 +741,8 @@ section[id] {
 
 /* --- CONTACT GRID --- */
 .contact-grid {
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
 }
 
 .contact-card {
@@ -751,13 +752,14 @@ section[id] {
   text-align: center;
   text-decoration: none;
   color: var(--text);
-  gap: 0.6rem;
+  gap: 0.4rem;
+  padding: 1rem 1.2rem;
 }
 
 .contact-icon {
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: var(--accent);
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.2rem;
   transition: var(--transition);
 }
 
@@ -766,9 +768,13 @@ section[id] {
   color: #a855f7;
 }
 
+.contact-card strong {
+  font-size: 0.95rem;
+}
+
 .contact-card span {
   color: var(--muted);
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   word-break: break-all;
 }
 
