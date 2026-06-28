@@ -294,10 +294,6 @@ section[id] {
   transition: var(--transition);
 }
 
-.photo-glow-wrapper:hover::after {
-  filter: blur(30px);
-  opacity: 0.55;
-}
 
 .photo {
   width: 220px;
@@ -314,9 +310,6 @@ section[id] {
   transition: var(--transition);
 }
 
-.photo:hover img {
-  transform: scale(1.06);
-}
 
 .buttons {
   display: flex;
